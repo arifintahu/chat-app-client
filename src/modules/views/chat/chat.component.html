@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-11 col-md-10 col-lg-7 mx-auto">
+            <div class="card card-chat my-5">
+                <h5 class="card-title text-center">{{groupname}}</h5>
+                <div class="card-body">
+                    <div class="chat-body" #div>
+                        <app-chat-bubble isme="no" name="Akira" msg="Halo"></app-chat-bubble>
+                        <app-chat-bubble isme="yes" name="Me" msg="maap spam"></app-chat-bubble>
+                    </div>
+                </div>
+                <div class="send-bar">
+                    <div class="msg-box">
+                        <input id="msgText" type="text" (keyup)="typeMsg($event)" placeholder="Type Message" #divMsg>
+                        <a class="btn btn-success btn-send" (click)="sendMsg()">Send</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

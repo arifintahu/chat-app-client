@@ -1,0 +1,30 @@
+.chat-content{
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.chat-content .chat-msg {
+    padding: 8px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.isme-yes{
+    float : right;
+}
+
+.isme-yes .chat-name{
+    text-align: right;
+}
+
+.isme-yes .chat-msg {
+    background: #43e66c;
+}
+
+.isme-no{
+    float : left;
+}
+
+.isme-no .chat-msg{
+    background: #9fbad6;
+}

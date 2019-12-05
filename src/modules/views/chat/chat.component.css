@@ -1,0 +1,52 @@
+.container{
+    height: 100%;
+    margin-bottom: -50px;
+    margin-top: 50px;
+}
+
+.chat-body{
+    overflow-y: scroll;
+    height: 400px;
+    padding-right: 10px;
+}
+
+.card-chat {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-chat .card-title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.card-chat .card-body {
+    padding: 1rem;
+}
+
+.send-bar{
+    background: rgb(73, 91, 110);
+    padding: 10px;
+    display: inline-block;
+}
+
+.send-bar input{
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-right: 5px;
+    width: 80%;
+}
+
+.send-bar .btn-send{
+    color: snow;
+    border-radius: 10px;
+}
+
+.send-bar .msg-box{
+   text-align: center;
+}
+
+
