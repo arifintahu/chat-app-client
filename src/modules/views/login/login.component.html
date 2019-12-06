@@ -4,7 +4,7 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                 <h5 class="card-title text-center">Chat App</h5>
-                <form class="form-signin">
+                <form class="form-signin" *ngIf="loginForm">
                     <div class="form-label-group">
                         <input type="text" id="inputUsername" class="form-control" placeholder="Username" (keyup)="typeUsername($event)" required autofocus>
                         <label for="inputUsername">Username</label>
@@ -18,6 +18,27 @@
                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                     </div>
                     <a class="btn btn-lg btn-primary btn-block text-uppercase" (click)="Login()">Sign in</a>
+                    <a class="btn btn-lg btn-primary btn-block text-uppercase" (click)="Change()">Register</a>
+                </form>
+                <form class="form-signin" *ngIf="registerForm">
+                    <div class="form-label-group">
+                        <input type="text" id="inputFirstname" class="form-control" placeholder="Firstname" (keyup)="typeFirstname($event)" required autofocus>
+                        <label for="inputFirstname">Firstname</label>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="text" id="inputLastname" class="form-control" placeholder="Lastname" (keyup)="typeLastname($event)" required>
+                        <label for="inputLastname">Lastname</label>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="text" id="inputUsername" class="form-control" placeholder="Username" (keyup)="typeUsername($event)" required autofocus>
+                        <label for="inputUsername">Username</label>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" (keyup)="typePassword($event)" required>
+                        <label for="inputPassword">Password</label>
+                    </div>
+                    <a class="btn btn-lg btn-primary btn-block text-uppercase" (click)="submitRegister()">Submit</a>
+                    <a class="btn btn-lg btn-primary btn-block text-uppercase" (click)="Change()">Back</a>
                 </form>
                 </div>
             </div>

@@ -9,15 +9,25 @@ import { Router } from '@angular/router';
 })
 export class GroupComponent implements OnInit {
   @Input() name : string;
+  @Input() enterForm : boolean;
+  @Input() createForm : boolean;
   groupname = '';
   constructor(private router: Router) { }
   ngOnInit() {
   	const user = JSON.parse(localStorage.getItem('user'));
   	this.name = user.lastname;
+    this.enterForm = true;
+    this.createForm = false;
   }
 
   typeGroupname(event){
   	this.groupname = event.target.value;
+  }
+
+  change(){
+    this.enterForm = !this.enterForm;
+    this.createForm = !this.createForm;
+    this.groupname = '';
   }
 
   async enterGroup() {
@@ -38,6 +48,28 @@ export class GroupComponent implements OnInit {
       } else {
       	alert('Group Name does not exist');
         this.router.navigate(['group']);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async createGroup() {
+    try {
+      const response = await fetch('http://localhost:3000/groups', {
+        method : 'POST',
+        body : JSON.stringify({
+          groupname : this.groupname
+        }),
+        headers : {
+          'Content-Type': 'application/json'
+        }
+      });
+      const json = await response.json();
+      if (json.ok) {
+        alert('Success');
+      } else {
+        alert(`${json.msg}`);
       }
     } catch (e) {
       console.log(e);
