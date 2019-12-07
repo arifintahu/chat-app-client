@@ -53,7 +53,7 @@ export class ChatComponent implements OnInit{
         if(this.isMe(data.user_id)){
           this.addChatMe(data.message);
         }else{
-          const response = await fetch(`http://localhost:3000/users/${data.user_id}`, {
+          const response = await fetch(`http://chat-app-server-2.herokuapp.com/users/${data.user_id}`, {
             method : 'GET',
             headers : {
               'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ export class ChatComponent implements OnInit{
 
   async sendMsg() {
     if(this.message != ''){
-      const response = await fetch('http://localhost:3000/messages', {
+      const response = await fetch('http://chat-app-server-2.herokuapp.com/messages', {
         method : 'POST',
         body : JSON.stringify({
           group_id : this.group_id,
@@ -164,7 +164,7 @@ export class ChatComponent implements OnInit{
   }
 
   async reloadChat(){
-    const response = await fetch(`http://localhost:3000/messages`, {
+    const response = await fetch(`http://chat-app-server-2.herokuapp.com/messages`, {
       method : 'GET',
       headers : {
         'Content-Type': 'application/json'

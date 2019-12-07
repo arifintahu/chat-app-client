@@ -13,7 +13,7 @@ export class WebsocketService {
   connect(): Subject<MessageEvent> {
     // If you aren't familiar with environment variables then
     // you can hard code `environment.ws_url` as `http://localhost:5000`
-    this.socket = io('http://localhost:3000');
+    this.socket = io('http://chat-app-server-2.herokuapp.com');
 
     // We define our observable which will observe any incoming messages
     // from our socket.io server.

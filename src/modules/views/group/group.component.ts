@@ -32,7 +32,7 @@ export class GroupComponent implements OnInit {
 
   async enterGroup() {
     try {
-      const response = await fetch('http://localhost:3000/groups/enter', {
+      const response = await fetch('http://chat-app-server-2.herokuapp.com/groups/enter', {
         method : 'POST',
         body : JSON.stringify({
           groupname : this.groupname
@@ -56,7 +56,7 @@ export class GroupComponent implements OnInit {
 
   async createGroup() {
     try {
-      const response = await fetch('http://localhost:3000/groups', {
+      const response = await fetch('http://chat-app-server-2.herokuapp.com/groups', {
         method : 'POST',
         body : JSON.stringify({
           groupname : this.groupname

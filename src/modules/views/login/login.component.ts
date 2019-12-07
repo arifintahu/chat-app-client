@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   async Login() {
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('http://chat-app-server-2.herokuapp.com/login', {
         method : 'POST',
         body : JSON.stringify({
           username : this.username,
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
 
   async submitRegister(){
     console.log(this.firstname, this.lastname, this.username, this.password);
-    const response = await fetch('http://localhost:3000/users', {
+    const response = await fetch('http://chat-app-server-2.herokuapp.com/users', {
       method : 'POST',
       body : JSON.stringify({
         firstname : this.username,
